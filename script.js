@@ -1,4 +1,5 @@
 const body = document.body;
+body.classList.add("js");
 const menu = document.querySelector("#mobile-menu");
 const openButton = document.querySelector(".menu-toggle");
 const closeControls = document.querySelectorAll("[data-menu-close]");
@@ -64,6 +65,65 @@ const solutionsGrid = document.querySelector(".solutions-grid");
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
+
+const interiorTabs = document.querySelectorAll(".interior-tab");
+const interiorSlides = document.querySelectorAll(".interior-slide");
+const interiorCaption = document.querySelector("[data-interior-caption]");
+
+if (interiorTabs.length && interiorSlides.length) {
+  let activeInteriorTab = 0;
+  let interiorSlideInterval = 0;
+
+  function setInteriorTab(index) {
+    const activeIndex = (index + interiorTabs.length) % interiorTabs.length;
+    activeInteriorTab = activeIndex;
+
+    interiorTabs.forEach((tab, tabIndex) => {
+      const isActive = tabIndex === activeIndex;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    interiorSlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("is-active", slideIndex === activeIndex);
+    });
+
+    if (interiorCaption) {
+      interiorCaption.textContent = interiorTabs[activeIndex].textContent.trim();
+    }
+  }
+
+  function restartInteriorSlideshow() {
+    if (prefersReducedMotion) return;
+
+    window.clearInterval(interiorSlideInterval);
+    interiorSlideInterval = window.setInterval(() => {
+      setInteriorTab(activeInteriorTab + 1);
+    }, 4500);
+  }
+
+  interiorTabs.forEach((tab, tabIndex) => {
+    tab.addEventListener("click", () => {
+      setInteriorTab(tabIndex);
+      restartInteriorSlideshow();
+    });
+
+    tab.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+
+      event.preventDefault();
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      const nextIndex = (tabIndex + direction + interiorTabs.length) % interiorTabs.length;
+      setInteriorTab(nextIndex);
+      restartInteriorSlideshow();
+      interiorTabs[nextIndex].focus();
+    });
+  });
+
+  setInteriorTab(0);
+  restartInteriorSlideshow();
+}
 
 const aboutSection = document.querySelector(".about-section");
 

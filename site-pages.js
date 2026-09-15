@@ -384,7 +384,7 @@ const pages = {
     },
     featureGrid: [
       ["Equitable use", "Useful and dignified for people with diverse abilities, with no segregated passenger zones."],
-      ["Flexibility in use", "Foldable seats, adaptable layouts, multiple payment options, and custom fleet configurations."],
+      ["Flexibility in use", "Forward-facing foldable seats, adaptable layouts, multiple payment options, and custom fleet configurations."],
       ["Simple and intuitive", "Clear signage, predictable layouts, simple boarding, easy route information, and user-friendly apps."],
       ["Perceptible information", "Audio announcements, visual displays, tactile flooring, digital alerts, route maps, and emergency lights."],
       ["Tolerance for error", "Anti-slip floors, rounded edges, emergency lighting, fire systems, safe circulation paths, and clear exits."],
@@ -393,6 +393,8 @@ const pages = {
     featureGridHeading: "Designed around six core principles",
     featureGridSummary: "Each principle becomes a concrete decision in seating, signage, flooring, and circulation, not an afterthought.",
     gallery: [
+      ["assets/foldable-seats-open-bay.png", "Foldable seating raised to create an open accessible bay"],
+      ["assets/foldable-seats-mixed-mode.png", "Foldable seats lowered and raised for mixed passenger needs"],
       ["assets/wide doors.png", "Wide, step-free boarding with tactile guidance"],
       ["assets/low floor easy acces .png", "Low-floor interiors built for easy, unaided access"],
       ["assets/clear way finding .png", "Clear, high-contrast wayfinding at every stop"],
@@ -407,9 +409,16 @@ const pages = {
       {
         heading: "Universal bus interior",
         copy: "The interior is where passengers experience mobility. It is where comfort is felt, information is received, safety becomes visible, and dignity is experienced.",
-        list: ["Foldable forward-facing seating", "Tactile navigation", "Multi-sensory information", "Universal circulation", "Emergency guidance", "Passenger wellness design"],
-        image: "assets/ud-bus-interior.png",
+        list: ["Forward-facing foldable seating", "Tactile navigation", "Multi-sensory information", "Universal circulation", "Emergency guidance", "Passenger wellness design"],
+        image: "assets/foldable-seats-flex-bay.png",
         imageAlt: "Universal Design bus interior with foldable seating and tactile guidance path",
+      },
+      {
+        heading: "Adaptable seating bay",
+        copy: "Foldable seats let operators change the interior layout quickly while keeping wheelchair access, caregiver space, luggage movement, and seated comfort in the same shared passenger environment.",
+        list: ["Open wheelchair and pram bay", "Lowered seats when capacity is needed", "Clear aisle and grab rail support", "Accessible markings integrated into the floor"],
+        image: "assets/foldable-seats-mixed-mode.png",
+        imageAlt: "Foldable bus seats with some seats lowered and others raised beside an accessible bay",
       },
     ],
   },
@@ -838,14 +847,6 @@ function contactMarkup(page) {
       <div class="contact-intro">
         <h2>${sectionTitle("Every transformation begins with a conversation.")}</h2>
         <p>Whether you are a government, investor, operator, manufacturer, technology company, university, development partner, media organization, or community group, Kencid Mobility welcomes collaboration.</p>
-        <div class="contact-cards">
-          <article style="--i:0"><strong>Phone</strong><span>Available on request for qualified project and partnership conversations.</span></article>
-          <article style="--i:1"><strong>Email</strong><span>Use the form to route your enquiry to the right Kencid Mobility team.</span></article>
-          <article style="--i:2"><strong>Office location</strong><span>Africa headquarters, with future regional offices, manufacturing centres, research centres, training academies, and mobility innovation hubs.</span></article>
-          <article style="--i:3"><strong>Business hours</strong><span>Project, investor, partnership, media, and general enquiries are reviewed during business days.</span></article>
-          <article style="--i:4"><strong>Response time</strong><span>Most enquiries receive a first reply within three to five business days.</span></article>
-          <article style="--i:5"><strong>Careers and media</strong><span>Send job applications and press requests through the form and select the closest inquiry type.</span></article>
-        </div>
       </div>
       <form class="contact-form" novalidate>
         <div class="form-grid">

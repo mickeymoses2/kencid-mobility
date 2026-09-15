@@ -838,14 +838,6 @@ function contactMarkup(page) {
       <div class="contact-intro">
         <h2>${sectionTitle("Every transformation begins with a conversation.")}</h2>
         <p>Whether you are a government, investor, operator, manufacturer, technology company, university, development partner, media organization, or community group, Kencid Mobility welcomes collaboration.</p>
-        <div class="contact-cards">
-          <article style="--i:0"><strong>Phone</strong><span>Available on request for qualified project and partnership conversations.</span></article>
-          <article style="--i:1"><strong>Email</strong><span>Use the form to route your enquiry to the right Kencid Mobility team.</span></article>
-          <article style="--i:2"><strong>Office location</strong><span>Africa headquarters, with future regional offices, manufacturing centres, research centres, training academies, and mobility innovation hubs.</span></article>
-          <article style="--i:3"><strong>Business hours</strong><span>Project, investor, partnership, media, and general enquiries are reviewed during business days.</span></article>
-          <article style="--i:4"><strong>Response time</strong><span>Most enquiries receive a first reply within three to five business days.</span></article>
-          <article style="--i:5"><strong>Careers and media</strong><span>Send job applications and press requests through the form and select the closest inquiry type.</span></article>
-        </div>
       </div>
       <form class="contact-form" novalidate>
         <div class="form-grid">

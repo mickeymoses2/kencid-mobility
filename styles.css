@@ -707,7 +707,7 @@ a {
 .about-copy h2 {
   margin: 0;
   color: var(--ink-dark);
-  font-size: var(--section-title-size);
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
   font-weight: 900;
   line-height: var(--section-title-line);
   letter-spacing: 0;
@@ -1063,6 +1063,7 @@ a {
 .technology-copy h2 .title-line,
 .terminals-copy h2 .title-line,
 .interior-copy h2 .title-line,
+.foldable-seats-copy h2 .title-line,
 .split-copy h2 .title-line,
 .page-band h2 .title-line,
 .narrow-heading h2 .title-line,
@@ -2365,6 +2366,137 @@ a {
 .interior-learn-more:focus-visible {
   outline: 2px solid var(--lime);
   outline-offset: 3px;
+}
+
+.foldable-seats-section {
+  overflow: hidden;
+  scroll-margin-top: var(--nav-height);
+  background:
+    linear-gradient(180deg, oklch(0.99 0 0), oklch(0.955 0.008 230));
+  color: var(--ink-dark);
+  padding: clamp(64px, 8vw, 112px) clamp(18px, 3.6vw, 56px);
+}
+
+.foldable-seats-inner {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(34px, 6vw, 82px);
+  width: min(1270px, 100%);
+  margin-inline: auto;
+}
+
+.foldable-seats-copy h2 {
+  max-width: 24ch;
+  margin: 14px 0 0;
+  color: var(--ink-dark);
+  font-family: "Barlow", "Manrope", Arial, sans-serif;
+  font-size: clamp(1.75rem, 2.8vw, 3rem);
+  font-weight: 850;
+  line-height: var(--section-title-line);
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.foldable-seats-copy h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.foldable-seats-copy > p {
+  max-width: 60ch;
+  margin: 22px 0 0;
+  color: var(--ink-muted);
+  font-size: var(--description-font-size);
+  font-weight: 620;
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+
+.foldable-seats-points {
+  display: grid;
+  gap: 10px;
+  margin: clamp(24px, 3vw, 34px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.foldable-seats-points li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 13px;
+  align-items: center;
+  min-height: 78px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+}
+
+.foldable-seats-points li > span {
+  display: grid;
+  place-items: center;
+  grid-column: 1;
+  width: 42px;
+  height: 42px;
+  border: 1px solid oklch(0.72 0.16 130 / 0.5);
+  border-radius: 999px;
+  background: oklch(0.72 0.18 130 / 0.12);
+  color: var(--lime-deep);
+}
+
+.foldable-seats-points svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.foldable-seats-points strong {
+  display: block;
+  color: var(--ink-dark);
+  font-size: clamp(0.92rem, 1vw, 1.02rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.foldable-seats-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.48fr);
+  grid-template-rows: repeat(2, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.foldable-seats-gallery figure {
+  position: relative;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--muted);
+}
+
+.foldable-seats-gallery .foldable-seat-hero {
+  grid-row: 1 / span 2;
+  min-height: clamp(360px, 42vw, 560px);
+}
+
+.foldable-seats-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.06) contrast(1.02);
+  transition: transform 520ms var(--ease-out);
+}
+
+.foldable-seats-gallery figure:hover img,
+.foldable-seats-gallery figure:focus-within img {
+  transform: scale(1.035);
 }
 
 .passenger-systems-section {
@@ -3731,6 +3863,7 @@ a {
   .solution-card,
   .solution-card img,
   .about-cta span:first-child,
+  .foldable-seats-gallery img,
   .accessibility-card,
   .accessibility-card img,
   .impact-strip-list li,
@@ -3959,7 +4092,6 @@ a {
 }
 
 .page-card,
-.contact-cards article,
 .article-card,
 .featured-article,
 .metric-panel,
@@ -4013,7 +4145,6 @@ a {
 }
 
 .page-card h3,
-.contact-cards strong,
 .article-card h3 {
   margin: 0;
   color: var(--ink-dark);
@@ -4551,26 +4682,6 @@ a {
   align-items: start;
 }
 
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.contact-cards article {
-  padding: 20px;
-}
-
-.contact-cards span {
-  display: block;
-  margin-top: 8px;
-  color: var(--ink-muted);
-  font-size: 0.88rem;
-  font-weight: 650;
-  line-height: 1.5;
-}
-
 .contact-form {
   display: grid;
   gap: 18px;
@@ -4795,6 +4906,7 @@ a {
 .js .about-section,
 .js .technology-section,
 .js .terminals-section,
+.js .foldable-seats-section,
 .js .accessible-section.reveal-on-scroll,
 .js .impact-strip-section.reveal-on-scroll {
   opacity: 1;
@@ -4809,7 +4921,9 @@ a {
 .js .technology-copy,
 .js .technology-visual,
 .js .terminals-copy,
-.js .terminals-media {
+.js .terminals-media,
+.js .foldable-seats-copy,
+.js .foldable-seats-gallery {
   opacity: 0;
   transition:
     opacity 900ms ease,
@@ -4819,14 +4933,16 @@ a {
 .js .split-feature .split-copy,
 .js .about-copy,
 .js .technology-copy,
-.js .terminals-copy {
+.js .terminals-copy,
+.js .foldable-seats-copy {
   transform: translateX(-44px);
 }
 
 .js .split-feature .split-media,
 .js .about-media,
 .js .technology-visual,
-.js .terminals-media {
+.js .terminals-media,
+.js .foldable-seats-gallery {
   transform: translateY(36px);
   transition-delay: 160ms;
 }
@@ -4838,7 +4954,9 @@ a {
 .technology-section.is-visible .technology-copy,
 .technology-section.is-visible .technology-visual,
 .terminals-section.is-visible .terminals-copy,
-.terminals-section.is-visible .terminals-media {
+.terminals-section.is-visible .terminals-media,
+.foldable-seats-section.is-visible .foldable-seats-copy,
+.foldable-seats-section.is-visible .foldable-seats-gallery {
   opacity: 1;
   transform: none;
 }
@@ -4893,8 +5011,7 @@ a {
 .js .gallery-item,
 .js .process-list li,
 .js .check-list li,
-.js .stat-list li,
-.js .contact-cards article {
+.js .stat-list li {
   opacity: 0;
   transform: translateX(-32px);
   transition:
@@ -4906,8 +5023,7 @@ a {
 .reveal-on-scroll.is-visible .gallery-item,
 .reveal-on-scroll.is-visible .process-list li,
 .reveal-on-scroll.is-visible .check-list li,
-.reveal-on-scroll.is-visible .stat-list li,
-.reveal-on-scroll.is-visible .contact-cards article {
+.reveal-on-scroll.is-visible .stat-list li {
   opacity: 1;
   transform: translateX(0);
 }
@@ -4991,7 +5107,8 @@ a {
 
 @media (max-width: 980px) {
   .technology-inner,
-  .terminals-inner {
+  .terminals-inner,
+  .foldable-seats-inner {
     grid-template-columns: 1fr;
   }
 
@@ -5087,7 +5204,8 @@ a {
   }
 
   .technology-section,
-  .terminals-section {
+  .terminals-section,
+  .foldable-seats-section {
     padding: 54px 18px 66px;
   }
 
@@ -5095,6 +5213,11 @@ a {
   .terminals-copy h2 {
     max-width: 100%;
     font-size: var(--section-title-size);
+  }
+
+  .foldable-seats-copy h2 {
+    max-width: 100%;
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
   }
 
   .technology-stack article,
@@ -5121,6 +5244,19 @@ a {
     height: 260px;
     min-height: 260px;
     border-radius: 12px;
+  }
+
+  .foldable-seats-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 10px;
+  }
+
+  .foldable-seats-gallery .foldable-seat-hero,
+  .foldable-seats-gallery figure {
+    grid-row: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .page-hero h1 {
@@ -5154,7 +5290,6 @@ a {
     padding: 24px 18px;
   }
 
-  .contact-cards,
   .form-grid,
   .metric-panel {
     grid-template-columns: 1fr;
@@ -5192,6 +5327,7 @@ a {
   .split-media img,
   .technology-visual img,
   .terminals-media img,
+  .foldable-seats-gallery img,
   .page-card,
   .article-card,
   .whatsapp-float::before,
@@ -5201,11 +5337,12 @@ a {
   .split-media,
   .contact-intro,
   .contact-form,
+  .foldable-seats-copy,
+  .foldable-seats-gallery,
   .gallery-item,
   .process-list li,
   .check-list li,
   .stat-list li,
-  .contact-cards article,
   .metric-panel > div,
   .solution-row {
     animation: none !important;
@@ -5217,13 +5354,14 @@ a {
   .js .split-feature .split-media,
   .js .contact-layout .contact-intro,
   .js .contact-layout .contact-form,
+  .js .foldable-seats-copy,
+  .js .foldable-seats-gallery,
   .js .page-card,
   .js .gallery-item,
   .js .article-card,
   .js .process-list li,
   .js .check-list li,
   .js .stat-list li,
-  .js .contact-cards article,
   .js .metric-panel > div,
   .js .solution-showcase .solution-row {
     opacity: 1;

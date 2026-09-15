@@ -3959,7 +3959,6 @@ a {
 }
 
 .page-card,
-.contact-cards article,
 .article-card,
 .featured-article,
 .metric-panel,
@@ -4013,7 +4012,6 @@ a {
 }
 
 .page-card h3,
-.contact-cards strong,
 .article-card h3 {
   margin: 0;
   color: var(--ink-dark);
@@ -4551,26 +4549,6 @@ a {
   align-items: start;
 }
 
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.contact-cards article {
-  padding: 20px;
-}
-
-.contact-cards span {
-  display: block;
-  margin-top: 8px;
-  color: var(--ink-muted);
-  font-size: 0.88rem;
-  font-weight: 650;
-  line-height: 1.5;
-}
-
 .contact-form {
   display: grid;
   gap: 18px;
@@ -4893,8 +4871,7 @@ a {
 .js .gallery-item,
 .js .process-list li,
 .js .check-list li,
-.js .stat-list li,
-.js .contact-cards article {
+.js .stat-list li {
   opacity: 0;
   transform: translateX(-32px);
   transition:
@@ -4906,8 +4883,7 @@ a {
 .reveal-on-scroll.is-visible .gallery-item,
 .reveal-on-scroll.is-visible .process-list li,
 .reveal-on-scroll.is-visible .check-list li,
-.reveal-on-scroll.is-visible .stat-list li,
-.reveal-on-scroll.is-visible .contact-cards article {
+.reveal-on-scroll.is-visible .stat-list li {
   opacity: 1;
   transform: translateX(0);
 }
@@ -5154,7 +5130,6 @@ a {
     padding: 24px 18px;
   }
 
-  .contact-cards,
   .form-grid,
   .metric-panel {
     grid-template-columns: 1fr;
@@ -5205,7 +5180,6 @@ a {
   .process-list li,
   .check-list li,
   .stat-list li,
-  .contact-cards article,
   .metric-panel > div,
   .solution-row {
     animation: none !important;
@@ -5223,7 +5197,6 @@ a {
   .js .process-list li,
   .js .check-list li,
   .js .stat-list li,
-  .js .contact-cards article,
   .js .metric-panel > div,
   .js .solution-showcase .solution-row {
     opacity: 1;

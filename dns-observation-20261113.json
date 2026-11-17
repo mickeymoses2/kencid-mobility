@@ -1,0 +1,29 @@
+{
+  "domain": "kencidmobility.com",
+  "observedAt": "2026-11-13T09:10:44.6490337+03:00",
+  "source": "Public DNS lookups against current authoritative DNS",
+  "authoritativeNameservers": [
+    "lunar.dns-parking.com",
+    "solar.dns-parking.com"
+  ],
+  "records": [
+    {
+      "type": "A",
+      "content": "2.57.91.91",
+      "name": "kencidmobility.com"
+    },
+    {
+      "type": "CNAME",
+      "content": "kencidmobility.com",
+      "name": "www.kencidmobility.com"
+    }
+  ],
+  "checkedAbsent": [
+    "MX at apex",
+    "TXT at apex (including SPF/verification)",
+    "TXT at _dmarc.kencidmobility.com",
+    "TXT at default._domainkey.kencidmobility.com",
+    "TXT at mail._domainkey.kencidmobility.com"
+  ],
+  "notes": "Public DNS observation only, not an authoritative zone export. Current nameservers are Hostinger DNS parking."
+}
